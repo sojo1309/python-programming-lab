@@ -1,0 +1,65 @@
+from easygui import *
+import sys
+list=[]
+sum=0
+
+while 1:
+    msgbox("Welcome to Ganges")
+
+    msg ="In which category you want to buy items?"
+    title = "NEW E Bazaar"
+    choices=["Smartphones", "Clothing", "Stationary", "Laptops"]
+    choice = choicebox(msg, title, choices)
+     
+    msgbox("You chose: " + str(choice), "Confirm your choice")
+
+    msg = "Do you want to continue?"
+    title = "Please Confirm"
+    if choice=="Smartphones":
+        msgbox("Welcome to Smartphone bazaar")
+        msg="Which Smartphone?"
+    	title= "NEW E Smartphone Bazaar"
+    	choices= ["Vivo-199$","Samsung-499$","Moto-350$","Apple-999$"]
+    	choice= choicebox(msg, title, choices)
+
+        msgbox("You chose: " + str(choice), "Confirm your choice")
+
+        msg = "Is it your final choice(Press continue to continue shopping)"
+        title = "Please Confirm"
+        msgbox("Thank you for buying Ganges")
+    elif choice=="Clothing":
+        msgbox("Welcome to Clothes bazaar")
+        msg="What type of clothes?"
+    	title= "NEW E Clothes Bazaar"
+    	choices= ["L size Tshirt UNISEX=6.99$","M size Tshirt for women=6.99$","Levis Joggers=50$","FCB Shorts=49.99$"]
+    	choice= choicebox(msg, title, choices)
+
+        msgbox("You chose: " + str(choice), "Confirm your choice")
+
+        msg = "Is it your final choice(Press continue to continue shopping)"
+        title = "Please Confirm"
+        msgbox("Thank you for buying at NEW E Bazaar")
+    elif choice=="Laptops":
+        msgbox("Welcome to Laptop Bazaar")
+        msg="Which Item?"
+    	title= "NEW E Grocery Bazaar"
+    	choices= ["Lenovo-1500$","Dell-1650$","HP-1675$","Apple-2000$""]
+    	choice= choicebox(msg, title, choices)
+
+        msgbox("You chose: " + str(choice), "Confirm your choice")
+
+        msg = "Is it your final choice(Press continue to continue shopping)"
+        title = "Please Confirm"
+        msgbox("Thank you for buying at Ganges")
+
+        msg = "Is it your final choice(Press continue to continue shopping)"
+        title = "Please Confirm"
+        msgbox("Thank you for buying at Ganges")
+
+    if ccbox(msg, title):    #show a Continue/Cancel dialog
+        list.append(choice)  
+        pass   #user chose continue 
+    else:
+         list.append(choice)
+         textbox(msg="FINAL BILL",title="BILL",text=list)
+sys.exit(0)
