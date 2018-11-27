@@ -4,7 +4,7 @@ def max(a,b,c):
  elif(b>a) and (b>c):
 	largest=b
  else:
-	largest=c
+        largest=c
  return largest
 a=12
 b=45
